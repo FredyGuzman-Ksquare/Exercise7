@@ -22,6 +22,9 @@ const mergeArrays=(arr1,arr2)=>{
     let finalArray=[];
     let arr1Size=arr1.length;
     let arr2Size=arr2.length;
+    console.log(arr1Size)
+    console.log(arr2Size)
+
     if(arr1Size>arr2Size){
         arr2Size++;
     }else{
@@ -29,13 +32,23 @@ const mergeArrays=(arr1,arr2)=>{
     }
 
     while(i<arr1Size&&j<arr2Size){
-        if(arr1[i]<arr2[j]){
-            finalArray.push(arr1[i++]);
+        if(arrA[i]<arrB[j]){
+            finalArray.push(arrA[i++]);
         }else{
-            finalArray.push(arr2[j++]);
+            finalArray.push(arrB[j++]);
         }
          
     }
+    if(i<arr1Size||j<arr2Size){
+        if(i<arr1Size-1){
+            finalArray.push(arrA[i])
+
+        }else if(j<arr2Size){
+            finalArray.push(arrB[j])
+        }
+    }
+    console.log(arr1Size)
+    console.log(arr2Size)
     return finalArray;
 }
 
